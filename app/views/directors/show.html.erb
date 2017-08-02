@@ -32,7 +32,44 @@
                 <a href = "/movies/<%= movie.id %>"> <%= movie.title %> (<%= movie.year %>)</a>
               </li>
             <% end %>
-           
+            
+            <li class="list-group-item">
+              <form action="/create_movie" method="post">
+                <!-- Hidden input for authenticity token to protect from forgery -->
+                <!-- <input name="authenticity_token" type="hidden" value="P89YYj9ikC1cGLfGXfnSBVNTIIFv2FDyS7V8SDwdmPFjZUFIvrDQI5ZYQGEaropxnDnG2rCqO4V5b9AgEqLJ1w=="> -->           
+  
+                <!-- Label and input for title -->
+                <div class="form-group">
+                  <label for="title" class="control-label">
+                    Title
+                  </label>
+                  <input type="text" id="title" name="title" placeholder="Title" class="form-control" value="">
+                </div>
+
+                <!-- Label and input for year -->
+                <div class="form-group">
+                  <label for="year" class="control-label">
+                    Year
+                  </label>
+                  <input type="text" id="year" name="year" placeholder="Year" class="form-control" value="">
+                </div>
+
+                <!-- Label and input for director_id -->
+                <input name="director_id" type="hidden" value="<%= @director_id %>">
+
+                <button class="btn btn-success">
+                Create Movie
+                </button>
+                or
+                <a href="/movies">Cancel</a>
+            </form>
+        
+        
+        
+        
+        
+        </ul>   
+        
         
         </dd>
 
