@@ -18,4 +18,6 @@ class Actor < ApplicationRecord
 #  - dob: no rules
 #  - bio: no rules
 #  - image_url: no rules
+    has_many :characters
+    has_many :movies, :through => :characters
 end
