@@ -18,5 +18,6 @@ class Character < ApplicationRecord
     validates :actor_id, :presence => true
 #  - name: must be unique in combination with actor_id
     validates :name, :presence => true, :uniqueness => {:scope => :actor_id}
-    
+    belongs_to :movie, :class_name => "Movie", :foreign_key => "movie_id"
+    belongs_to :actor, :class_name => "Actor", :foreign_key => "actor_id"
 end
