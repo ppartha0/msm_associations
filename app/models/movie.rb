@@ -30,6 +30,7 @@ class Movie < ApplicationRecord
         :greater_than_or_equal_to => 0, :less_than_or_equal_to => 2764800, :allow_blank => true}
 #  - description: no rules
 #  - image_url: no rules
+    belongs_to :director, :class_name => "Director", :foreign_key => "director_id"
     has_many :characters
     has_many :actors, :through => :characters
 
