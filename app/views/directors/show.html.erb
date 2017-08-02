@@ -29,7 +29,7 @@
           
             <% Movie.where({ :director_id => @director.id }).each do |movie| %>
               <li class="list-group-item">
-                <a href = "/movies/movie.id"> </a><%= movie.title %> (<%= movie.year %>)</a>
+                <a href = "/movies/<%= movie.id %>"> <%= movie.title %> (<%= movie.year %>)</a>
               </li>
             <% end %>
            
