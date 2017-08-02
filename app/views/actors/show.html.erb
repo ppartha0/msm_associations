@@ -31,6 +31,49 @@
                 <a href = "/movies/<%= film.movie_id %>"> <%= Movie.find_by({ :id => film.movie_id}).title %> </a> (<%= film.name %>)
               </li>
             <% end %>
+            
+            
+            <li class="list-group-item">
+              <form action="/create_character" method="post">
+                <!-- Hidden input for authenticity token to protect from forgery -->
+                <!-- <input name="authenticity_token" type="hidden" value="P89YYj9ikC1cGLfGXfnSBVNTIIFv2FDyS7V8SDwdmPFjZUFIvrDQI5ZYQGEaropxnDnG2rCqO4V5b9AgEqLJ1w=="> -->           
+  
+                <!-- Label and input for movie -->
+                <div class="form-group">
+                  <label for="movie_id" class="control-label">
+                    Movie
+                  </label>
+                  <%= select_tag("movie_id", options_from_collection_for_select(Movie.all, :id, :title), :class => "form-control") %>
+                </div>
+
+                <p><a href="/movies/new">or add a new movie</a></p>
+                
+                <!-- Label and input for character name -->
+                <div class="form-group">
+                  <label for="name" class="control-label">
+                    Name
+                  </label>
+                  <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="">
+                </div>
+
+                <!-- Label and input for actor_id -->
+                <label for="actor_id" class="control-label">
+                  
+                </label>
+                <input name="actor_id" type="hidden" value="<%= @actor.id %>">
+
+                <button class="btn btn-success">
+                Create Character
+                </button>
+                or
+                <a href="/actors">Cancel</a>
+            </form>
+            
+            
+            
+            
+            
+            
    
         </ul>
       </dd>
