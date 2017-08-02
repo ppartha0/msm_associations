@@ -17,6 +17,10 @@
       <dt>Image url</dt>
       <dd><img src="<%= @actor.image_url %>"></dd>
       
+      <dt>Count of characters played</dt>
+      <dd>
+        <%= Character.where({ :actor_id => @actor.id }).count %>
+      </dd>
       <dt>Filmography</dt>
       <dd> 
       
@@ -28,7 +32,6 @@
               </li>
             <% end %>
    
-        
         </ul>
       </dd>
 
